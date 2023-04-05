@@ -1,0 +1,32 @@
+body {
+  font-family: monospace;
+}
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#city {
+  width: 350px;
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+}
+
+.city-one {
+  margin-top: 20px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+}
