@@ -1,15 +1,17 @@
-function alertCityTime(event) {
-  if (event.target.value.length > 0) {
-    let localTime = moment()
-      .tz(event.target.value)
-      .format("dddd, MMMM, D YYYY h:mm A");
-
-    alert(`It is ${localTime} in ${event.target.value}`);
-  }
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `<div id="cities">
+        <div class="row">
+          <div class="col-sm">
+            <h2>${cityName}</h2>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+          </div>
+          <div class="time col-sm">${cityTime.format("HH:mm A")}</div>
+        </div>`;
 }
-
-let citySelect = document.querySelector("#city");
-citySelect.addEventListener("change", alertCityTime);
 
 function updateTime() {
   let amsterdamElement = document.querySelector("#amsterdam");
@@ -45,3 +47,6 @@ function updateTime() {
 
 updateTime();
 setInterval(updateTime, 1000);
+
+let citySelectElement = document.querySelector("#city");
+citySelectElement.addEventListener("change", updateCity);
