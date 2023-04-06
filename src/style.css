@@ -2,6 +2,7 @@ body {
   font-family: monospace;
   background-image: url("img/globe.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
